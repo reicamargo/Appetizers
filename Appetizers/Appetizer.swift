@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Appetizer: Codable {
+struct Appetizer: Codable, Hashable {
     let id: Int
     let name: String
     let description: String
@@ -19,12 +19,12 @@ struct Appetizer: Codable {
     
 }
 
-struct AppetizerResponse {
+struct AppetizerResponse: Codable {
     let request: [Appetizer]
 }
 
 struct MockData {
-    static let sampleAppetizer = Appetizer(id: 0, name: "Test apptezier", description: "Just any description", imageURL: "", carbs: 0, protein: 0, calories: 0, price: 1.99)
+    static let sampleAppetizer = Appetizer(id: 0, name: "Test apptezier", description: "Just any description", imageURL: "https://seanallen-course-backend.herokuapp.com/images/appetizers/asian-flank-steak.jpg", carbs: 0, protein: 0, calories: 0, price: 1.99)
     
     static let appetizers = [sampleAppetizer, sampleAppetizer, sampleAppetizer, sampleAppetizer, sampleAppetizer, sampleAppetizer]
 }
