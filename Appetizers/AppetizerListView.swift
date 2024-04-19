@@ -23,6 +23,15 @@ struct AppetizerListView: View {
         .onAppear {
             appetizerListViewModel.getAppetizers()
         }
+        .alert("Error", 
+               isPresented: $appetizerListViewModel.showAlert,
+               presenting: appetizerListViewModel.alertItem,
+               actions: { reason in
+                    Button("OK", role: .cancel) { }
+                },
+                message: { reason in
+                    reason.message
+                })
     }
 }
 
