@@ -18,6 +18,7 @@
 		3D81FFC32BD30647009DDC3C /* AppetizerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81FFC22BD30647009DDC3C /* AppetizerListCell.swift */; };
 		3D81FFC52BD307C0009DDC3C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81FFC42BD307C0009DDC3C /* NetworkManager.swift */; };
 		3D81FFC72BD308DD009DDC3C /* APError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81FFC62BD308DD009DDC3C /* APError.swift */; };
+		3D81FFC92BD3149A009DDC3C /* AppetizerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81FFC82BD3149A009DDC3C /* AppetizerListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		3D81FFC22BD30647009DDC3C /* AppetizerListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListCell.swift; sourceTree = "<group>"; };
 		3D81FFC42BD307C0009DDC3C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3D81FFC62BD308DD009DDC3C /* APError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APError.swift; sourceTree = "<group>"; };
+		3D81FFC82BD3149A009DDC3C /* AppetizerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +70,10 @@
 				3D81FFAC2BD2ECD7009DDC3C /* AppetizersApp.swift */,
 				3D81FFAE2BD2ECD7009DDC3C /* AppetizerTabView.swift */,
 				3D81FFBA2BD2EDBE009DDC3C /* AppetizerListView.swift */,
+				3D81FFC22BD30647009DDC3C /* AppetizerListCell.swift */,
+				3D81FFC82BD3149A009DDC3C /* AppetizerListViewModel.swift */,
 				3D81FFC42BD307C0009DDC3C /* NetworkManager.swift */,
 				3D81FFC62BD308DD009DDC3C /* APError.swift */,
-				3D81FFC22BD30647009DDC3C /* AppetizerListCell.swift */,
 				3D81FFBC2BD2EDCF009DDC3C /* AccountView.swift */,
 				3D81FFC02BD2F56D009DDC3C /* Appetizer.swift */,
 				3D81FFBE2BD2EE07009DDC3C /* OrderView.swift */,
@@ -161,6 +164,7 @@
 				3D81FFC12BD2F56D009DDC3C /* Appetizer.swift in Sources */,
 				3D81FFC72BD308DD009DDC3C /* APError.swift in Sources */,
 				3D81FFC32BD30647009DDC3C /* AppetizerListCell.swift in Sources */,
+				3D81FFC92BD3149A009DDC3C /* AppetizerListViewModel.swift in Sources */,
 				3D81FFAF2BD2ECD7009DDC3C /* AppetizerTabView.swift in Sources */,
 				3D81FFBD2BD2EDCF009DDC3C /* AccountView.swift in Sources */,
 				3D81FFC52BD307C0009DDC3C /* NetworkManager.swift in Sources */,
