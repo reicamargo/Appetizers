@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct LoadingView: View {
-    //let width: CGFloat
-    //let height: CGFloat
     
     var body: some View {
         ProgressView()
