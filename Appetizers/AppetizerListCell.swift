@@ -9,21 +9,14 @@ import SwiftUI
 
 struct AppetizerListCell: View {
     var appetizer: Appetizer
+    
     var body: some View {
-        let url = URL(string: appetizer.imageURL)
+        
         HStack(alignment: .top) {
-            AsyncImage(url: url) { image in
-                image
-                    .resizable()
-                    .frame(width: 120, height: 90)
+            AppetizerRemoteImage(urlString: appetizer.imageURL)
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(8)
-            } placeholder: {
-                ProgressView()
-                    .tint(.blue)
                     .frame(width: 120, height: 90)
-                    .cornerRadius(10)
-            }
             
             VStack(alignment: .leading, spacing: 5) {
                 Text(appetizer.name)
@@ -41,3 +34,14 @@ struct AppetizerListCell: View {
 #Preview {
     AppetizerListCell(appetizer: MockData.sampleAppetizer)
 }
+
+// With async image. But, it doesn't have cache
+//AsyncImage(url: url) { image in
+//    image
+//        .resizable()
+//        .aspectRatio(contentMode: .fit)
+//        .cornerRadius(8)
+//} placeholder: {
+//    LoadingView()
+//}
+//.frame(width: 120, height: 90)
