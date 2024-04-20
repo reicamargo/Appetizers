@@ -25,6 +25,7 @@
 		3D81FFD12BD41F2C009DDC3C /* AppetizerRemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81FFD02BD41F2C009DDC3C /* AppetizerRemoteImage.swift */; };
 		3D81FFDE2BD42F8C009DDC3C /* AppetizerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81FFDD2BD42F8C009DDC3C /* AppetizerDetailView.swift */; };
 		3D81FFE02BD43452009DDC3C /* OrderButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81FFDF2BD43452009DDC3C /* OrderButtonView.swift */; };
+		3D81FFE32BD455BA009DDC3C /* XDismissButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81FFE22BD455BA009DDC3C /* XDismissButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		3D81FFD02BD41F2C009DDC3C /* AppetizerRemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerRemoteImage.swift; sourceTree = "<group>"; };
 		3D81FFDD2BD42F8C009DDC3C /* AppetizerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerDetailView.swift; sourceTree = "<group>"; };
 		3D81FFDF2BD43452009DDC3C /* OrderButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderButtonView.swift; sourceTree = "<group>"; };
+		3D81FFE22BD455BA009DDC3C /* XDismissButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				3D81FFDF2BD43452009DDC3C /* OrderButtonView.swift */,
+				3D81FFE22BD455BA009DDC3C /* XDismissButtonView.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			files = (
 				3D81FFCB2BD31746009DDC3C /* AlertItem.swift in Sources */,
 				3D81FFC12BD2F56D009DDC3C /* Appetizer.swift in Sources */,
+				3D81FFE32BD455BA009DDC3C /* XDismissButtonView.swift in Sources */,
 				3D81FFC72BD308DD009DDC3C /* APError.swift in Sources */,
 				3D81FFE02BD43452009DDC3C /* OrderButtonView.swift in Sources */,
 				3D81FFC32BD30647009DDC3C /* AppetizerListCell.swift in Sources */,

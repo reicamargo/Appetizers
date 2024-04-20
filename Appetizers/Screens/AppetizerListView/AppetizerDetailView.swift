@@ -28,9 +28,9 @@ struct AppetizerDetailView: View {
                     .padding()
             }
             HStack(spacing: 40) {
-                NutriotionalValuesView(title: "Calories", value: String(appetizer.calories))
-                NutriotionalValuesView(title: "Carbs", value: String(format: "%i g", appetizer.carbs))
-                NutriotionalValuesView(title: "Protein", value: String(format: "%i g", appetizer.protein))
+                NutriotionalInfoView(title: "Calories", value: String(appetizer.calories))
+                NutriotionalInfoView(title: "Carbs", value: String(format: "%i g", appetizer.carbs))
+                NutriotionalInfoView(title: "Protein", value: String(format: "%i g", appetizer.protein))
             }
             
             Spacer()
@@ -50,7 +50,7 @@ struct AppetizerDetailView: View {
             Button {
                 isShowingDetail = false
             } label: {
-                XCloseButtonView()
+                XDismissButtonView()
             },
             alignment: .topTrailing)
             
@@ -61,7 +61,7 @@ struct AppetizerDetailView: View {
     AppetizerDetailView(appetizer: MockData.sampleAppetizer, isShowingDetail: .constant(true))
 }
 
-struct NutriotionalValuesView: View {
+struct NutriotionalInfoView: View {
     var title: String
     var value: String
     
@@ -74,21 +74,6 @@ struct NutriotionalValuesView: View {
                 .fontWeight(.semibold)
                 .italic()
                 .foregroundStyle(.secondary)
-        }
-    }
-}
-
-struct XCloseButtonView: View {
-    var body: some View {
-        ZStack {
-            Circle()
-                .frame(width: 30, height: 30)
-                .foregroundStyle(.white)
-                .opacity(0.6)
-            Image(systemName: "xmark")
-                .imageScale(.small)
-                .frame(width: 44, height: 44)
-                .foregroundStyle(.black)
         }
     }
 }

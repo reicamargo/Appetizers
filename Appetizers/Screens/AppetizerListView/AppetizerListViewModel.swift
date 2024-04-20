@@ -12,6 +12,8 @@ class AppetizerListViewModel: ObservableObject {
     @Published var alertItem: AlertItem?
     @Published var showAlert = false
     @Published var isLoading = false
+    @Published var isShowingDetail = false
+    @Published var selectedAppetizer: Appetizer?
     
     //ver se funciona com o @MainActor
     func getAppetizers() {
