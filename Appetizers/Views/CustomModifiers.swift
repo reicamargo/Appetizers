@@ -14,6 +14,7 @@ struct StandardButtonStyle: ViewModifier {
             .buttonStyle(.bordered)
             .tint(.brandPrimary)
             .controlSize(.large)
+            .background(Color(.systemBackground))
     }
 }
 
