@@ -5,28 +5,25 @@
 //  Created by Reinaldo Camargo on 20/04/24.
 //
 
-import Foundation
+import SwiftUI
 
 class AccountViewModel: ObservableObject {
-    @Published var firstName = ""
-    @Published var lastName = ""
-    @Published var email = ""
-    @Published var birthdate = Date()
-    @Published var extraNapkins = false
-    @Published var frequentRefills = false
+    @AppStorage("user") private var userData: Data?
+    
+    @Published var user = User()
     @Published var alertItem: AlertItem?
-    @Published var showErrorAlert = false
+    @Published var showAlert = false
     
     private var isValidForm: Bool {
-        guard !firstName.isEmpty && !lastName.isEmpty && !email.isEmpty else {
+        guard !user.firstName.isEmpty && !user.lastName.isEmpty && !user.email.isEmpty else {
             self.alertItem = AlertContext.emptyField
-            showErrorAlert = true
+            showAlert = true
             return false
         }
         
-        guard email.isValidEmail else {
+        guard user.email.isValidEmail else {
             self.alertItem = AlertContext.invalidEmail
-            showErrorAlert = true
+            showAlert = true
             return false
         }
         
@@ -36,6 +33,25 @@ class AccountViewModel: ObservableObject {
     func saveChanges() {
         guard isValidForm else { return }
         
+        do {
+            let data = try JSONEncoder().encode(user)
+            userData = data
+            self.alertItem = AlertContext.userSaveSuccess
+            showAlert = true
+        } catch {
+            self.alertItem = AlertContext.invalidUserData
+            showAlert = true
+        }
+    }
+    
+    func retieveUser() {
+        guard let userData = userData else { return }
         
+        do {
+            user = try JSONDecoder().decode(User.self, from: userData)
+        } catch {
+            self.alertItem = AlertContext.invalidUserData
+            showAlert = true
+        }
     }
 }

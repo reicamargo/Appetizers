@@ -14,16 +14,16 @@ struct AccountView: View {
         NavigationView {
             Form {
                 Section("Personal Info") {
-                    TextField("First Name", text: $accountViewModel.firstName)
-                    TextField("Last Name", text: $accountViewModel.lastName)
-                    TextField("E-mail", text: $accountViewModel.email)
+                    TextField("First Name", text: $accountViewModel.user.firstName)
+                    TextField("Last Name", text: $accountViewModel.user.lastName)
+                    TextField("E-mail", text: $accountViewModel.user.email)
                         .keyboardType(.emailAddress)
                         .autocapitalization(.none)
                         .autocorrectionDisabled()
                         
                     DatePicker("Birthday",
-                               selection: $accountViewModel.birthdate,
-                               displayedComponents: .date)
+                               selection: $accountViewModel.user.birthdate,
+                               displayedComponents: [.date])
                     
                     Button {
                         accountViewModel.saveChanges()
@@ -34,15 +34,19 @@ struct AccountView: View {
                     
                 }
                 Section("Requests") {
-                    Toggle("Extra Napkins", isOn: $accountViewModel.extraNapkins)
-                    Toggle("Frequent Refills", isOn: $accountViewModel.frequentRefills)
+                    Toggle("Extra Napkins", isOn: $accountViewModel.user.extraNapkins)
+                        .toggleStyle(SwitchToggleStyle(tint: .brandPrimary))
+                    Toggle("Frequent Refills", isOn: $accountViewModel.user.frequentRefills)
+                        .toggleStyle(SwitchToggleStyle(tint: .brandPrimary))
                 }
-                .toggleStyle(SwitchToggleStyle(tint: .brandPrimary))
             }
             .navigationTitle("👽 Account")
         }
-        .alert("Form Error",
-               isPresented: $accountViewModel.showErrorAlert,
+        .onAppear {
+            accountViewModel.retieveUser()
+        }
+        .alert("Message",
+               isPresented: $accountViewModel.showAlert,
                presenting: accountViewModel.alertItem,
                actions: { reason in
                     Button("OK", role: .cancel) { }
