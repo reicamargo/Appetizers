@@ -17,6 +17,7 @@ struct OrderView: View {
                     List {
                         ForEach(order.items) { appetizer in
                             AppetizerListCell(appetizer: appetizer)
+                                .listRowSeparator(.visible)
                         }
                         .onDelete(perform: order.remove)
                     }

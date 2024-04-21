@@ -38,12 +38,18 @@ struct AppetizerDetailView: View {
             
             Spacer()
             
-            Button(action: {
+            Button {
                 order.add(appetizer)
                 isShowingDetail = false
-            }, label: {
-                OrderButtonView(title: String(format: "$%.2f - Add To Order", appetizer.price))
-            })
+            } label: {
+//                OrderButtonView(title: String(format: "$%.2f - Add To Order", appetizer.price))
+                Text(String(format: "$%.2f - Add To Order", appetizer.price))
+            }
+            .standardButtonStyle()
+            //custom modifier
+//            .buttonStyle(.bordered)
+//            .tint(.brandPrimary)
+//            .controlSize(.large)
             .padding()
         }
         .frame(width: 300, height: 525)

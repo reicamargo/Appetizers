@@ -59,4 +59,5 @@ struct AccountView: View {
 
 #Preview {
     AccountView()
+        .environmentObject(Order())
 }

@@ -15,6 +15,8 @@ struct AppetizerListView: View {
             NavigationView {
                 List(appetizerListViewModel.appetizers) { appetizer in
                     AppetizerListCell(appetizer: appetizer)
+                        .listRowSeparator(.visible)
+                    //.listRowSeparatorTint(.red)
                         .onTapGesture {
                             appetizerListViewModel.selectedAppetizer = appetizer
                             appetizerListViewModel.isShowingDetail = true
@@ -49,4 +51,5 @@ struct AppetizerListView: View {
 
 #Preview {
     AppetizerListView()
+        .environmentObject(Order())
 }
