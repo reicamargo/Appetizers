@@ -23,6 +23,8 @@ struct AlertContext {
                                        message: Text("There was an issue connecting to the server. Invalid data returned."))
     static let unableToComplete = AlertItem(title: Text("Server Error"),
                                             message: Text("Unable to complete your request at this time. Please check again later."))
+    static let connectionError = AlertItem(title: Text("Server Error"),
+                                            message: Text("Unable to connect to the server. Please verify you connection."))
     
     //MARK: - Account error messages
     static let emptyField = AlertItem(title: Text("Empty Field"),

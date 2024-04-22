@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct RemoteImage: View {
+struct RemoteImageView: View {
     var image: Image?
     var imagePlaceHolder: ImageResource
+    
     var body: some View {
         image?.resizable() ?? Image(imagePlaceHolder).resizable()
     }

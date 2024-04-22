@@ -42,6 +42,6 @@ struct AppetizerListCell: View {
 //        .aspectRatio(contentMode: .fit)
 //        .cornerRadius(8)
 //} placeholder: {
-//    LoadingView()
+//    Image(imagePlaceHolder).resizable()
 //}
 //.frame(width: 120, height: 90)

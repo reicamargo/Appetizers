@@ -24,9 +24,14 @@ struct AppetizerListView: View {
                 }
                 .navigationTitle("🍕 Appetizers")
             }
-            .onAppear {
+            .task {
+                //specific for calling network services on appear. If the user leave the view and the call didn't finished, task will cancel automatically the call
                 appetizerListViewModel.getAppetizers()
             }
+//            .onAppear {
+//            async old way
+//                appetizerListViewModel.getAppetizers()
+//            }
             .blur(radius: appetizerListViewModel.isShowingDetail ? 20 : 0)
             .disabled(appetizerListViewModel.isShowingDetail)
             
