@@ -74,7 +74,7 @@ struct AccountView: View {
         .onAppear {
             accountViewModel.retieveUser()
         }
-        .alert("Message",
+        .alert(accountViewModel.alertItem?.title ?? "Message",
                isPresented: $accountViewModel.showAlert,
                presenting: accountViewModel.alertItem,
                actions: { reason in
