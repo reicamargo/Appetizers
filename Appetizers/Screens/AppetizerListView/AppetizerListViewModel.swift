@@ -7,7 +7,7 @@
 
 import Foundation
 
-@MainActor final class AppetizerListViewModel: ObservableObject {
+final class AppetizerListViewModel: ObservableObject {
     @Published var appetizers: [Appetizer] = []
     @Published var alertItem: AlertItem?
     @Published var showAlert = false
@@ -15,31 +15,28 @@ import Foundation
     @Published var isShowingDetail = false
     @Published var selectedAppetizer: Appetizer?
 
-    func getAppetizers() -> Void {
+    @MainActor
+    func getAppetizers() async -> Void {
         isLoading = true
-        
-        //try a different way here
-        Task {
-            do {
-                appetizers = try await NetworkManager.shared.getAppetizers()
-                isLoading = false
-            } catch {
-                if let apError = error as? APError {
-                    switch apError {
-                    case .invalidURL:
-                        self.alertItem = AlertContext.invalidURL
-                    case .invalidResponse:
-                        self.alertItem = AlertContext.invalidResponse
-                    case .invalidData:
-                        self.alertItem = AlertContext.invalidData
-                    case .unableToComplete:
-                        self.alertItem = AlertContext.unableToComplete
-                    }
-                } else {
-                    alertItem = AlertContext.connectionError
+        do {
+            appetizers = try await NetworkManager.shared.getAppetizers()
+            isLoading = false
+        } catch {
+            if let apError = error as? APError {
+                switch apError {
+                case .invalidURL:
+                    self.alertItem = AlertContext.invalidURL
+                case .invalidResponse:
+                    self.alertItem = AlertContext.invalidResponse
+                case .invalidData:
+                    self.alertItem = AlertContext.invalidData
+                case .unableToComplete:
+                    self.alertItem = AlertContext.unableToComplete
                 }
-                isLoading = false
+            } else {
+                alertItem = AlertContext.connectionError
             }
+            isLoading = false
         }
     }
     

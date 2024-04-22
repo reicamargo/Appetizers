@@ -26,7 +26,7 @@ struct AppetizerListView: View {
             }
             .task {
                 //specific for calling network services on appear. If the user leave the view and the call didn't finished, task will cancel automatically the call
-                appetizerListViewModel.getAppetizers()
+                await appetizerListViewModel.getAppetizers()
             }
 //            .onAppear {
 //            async old way

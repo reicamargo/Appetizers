@@ -82,7 +82,7 @@ class NetworkManager {
         }
         
         let task = URLSession.shared.dataTask(with: url) { data, response, _ in
-            guard let data = data, let image = UIImage(data: data) else {
+            guard let data, let image = UIImage(data: data) else {
                 completed(nil)
                 return
             }

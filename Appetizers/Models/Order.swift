@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-class Order: ObservableObject {
+final class Order: ObservableObject {
     @Published var items: [Appetizer] = []
     var totalPrice: Double {
         items.reduce(0, { $0 + $1.price })
-// newbie version (mine)
+// newbie version
 //        var sum: Double = 0.00
 //        items.forEach { appetizer in
 //            sum += appetizer.price

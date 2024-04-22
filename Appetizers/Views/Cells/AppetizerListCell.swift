@@ -36,7 +36,7 @@ struct AppetizerListCell: View {
 }
 
 // With async image. But, it doesn't have cache
-//AsyncImage(url: url) { image in
+//AsyncImage(url: URL(string: appetizer.imageURL) { image in
 //    image
 //        .resizable()
 //        .aspectRatio(contentMode: .fit)
